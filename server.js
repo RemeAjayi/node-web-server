@@ -3,6 +3,9 @@ const express = require('express');
 const fs = require('fs');
 //creates an  express app
 const hbs = require('hbs');
+//enable heroku to set port
+const port = process.env.PORT || 3000; 
+
 var app = express();
 //sets view
 app.set('view engine', 'hbs');
@@ -53,6 +56,6 @@ app.get('/about', (req,res)=>
   });
 });
 //app is bound to a port on the system
-app.listen(3000 , ()=> {
+app.listen(port , ()=> {
 	console.log('Server is up and running');
 });
