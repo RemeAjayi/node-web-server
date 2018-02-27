@@ -55,6 +55,13 @@ app.get('/about', (req,res)=>
   	currentYear: new Date().getFullYear()
   });
 });
+app.get('/projects', (req, res)=> 
+  {
+   res.render('projects.hbs', {
+    pageTitle: 'Projects Page',
+    currentYear: new Date().getFullYear()
+   });
+  });
 //app is bound to a port on the system
 app.listen(port , ()=> {
 	console.log('Server is up and running');
